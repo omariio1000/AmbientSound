@@ -14,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//custom namespaces
+
+
 namespace AmbientSoundWPF
 {
 
@@ -23,6 +26,7 @@ namespace AmbientSoundWPF
     public partial class MainWindow : Window
     {
         bool running = false;
+
 
         public MainWindow()
         {
@@ -45,6 +49,6 @@ namespace AmbientSoundWPF
                     running = false;
                 }
             }       
-        }
+        }       
     }
 }

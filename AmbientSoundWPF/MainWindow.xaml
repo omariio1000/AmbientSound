@@ -8,9 +8,9 @@
         xmlns:local="clr-namespace:AmbientSoundWPF"
         mc:Ignorable="d"
         Title="Ambient Sound" Height="500" Width="500"
-    Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White">
+    Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" SizeChanged="AmbientSound_SizeChanged">
     <Grid Margin="0" Background="#FFACACAC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="500">
-        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Left" Margin="175,0,0,75" VerticalAlignment="Bottom" Width="150" Height="49" Click="Button_Click" Background="Red"/>
+        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Left" Margin="175,0,0,75" VerticalAlignment="Bottom" Width="150" Height="49" Click="Button_Click" Background="Red" FontWeight="Bold"/>
 
 
         <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" DockPanel.Dock="Right" TextAlignment="Center" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,100,250" />
