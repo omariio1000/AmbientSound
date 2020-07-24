@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Management;
 
 //custom namespaces
 
@@ -25,12 +27,33 @@ namespace AmbientSoundWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         bool running = false;
 
 
         public MainWindow()
         {
             InitializeComponent();
+
+            populateDevices();
+        }
+
+        private void populateDevices()
+        {
+            ManagementObjectSearcher objSearcher = new ManagementObjectSearcher(
+           "SELECT * FROM Win32_SoundDevice");
+
+            ManagementObjectCollection objCollection = objSearcher.Get();
+
+            foreach (ManagementObject obj in objCollection)
+            {
+                foreach (PropertyData property in obj.Properties)
+                {
+                    Console.Out.WriteLine(String.Format("{0}:{1}", property.Name, property.Value));
+                }
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -41,14 +64,20 @@ namespace AmbientSoundWPF
                     OnButton.Content = "ON";
                     OnButton.Background = new SolidColorBrush(Color.FromArgb(255, (byte)0, (byte)255, (byte)0));
                     running = true;
+                    
                 }
                 else
                 {
                     OnButton.Content = "OFF";
                     OnButton.Background = new SolidColorBrush(Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
                     running = false;
+
                 }
             }       
-        }       
+        }
+
+        
+
+        
     }
 }

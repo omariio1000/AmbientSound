@@ -8,8 +8,8 @@
         xmlns:local="clr-namespace:AmbientSoundWPF"
         mc:Ignorable="d"
         Title="Ambient Sound" Height="500" Width="500"
-    Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" SizeChanged="AmbientSound_SizeChanged">
-    <Grid Margin="0" Background="#FFACACAC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="500">
+    Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
+    <Grid Name="grid1" Margin="0" Background="#FFACACAC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="500">
         <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Left" Margin="175,0,0,75" VerticalAlignment="Bottom" Width="150" Height="49" Click="Button_Click" Background="Red" FontWeight="Bold"/>
 
 
@@ -44,6 +44,10 @@
             </ProgressBar.RenderTransform>
         </ProgressBar>
         
+        <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="0,0,0,400" VerticalAlignment="Center" Width="120">
+            <Border BorderBrush="Black" BorderThickness="1" Height="100" Width="100"/>
+        </ComboBox>
+        <Label x:Name="DeviceLabel" Content="Select a Device:" HorizontalAlignment="Center" Margin="0,0,0,450" VerticalAlignment="Center" Height="27"/>
 
     </Grid>
 </Window>
