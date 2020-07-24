@@ -47,6 +47,7 @@
         <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="0,0,0,400" VerticalAlignment="Center" Width="120">
             <Label Name ="DeviceLabel" HorizontalAlignment ="Center" VerticalAlignment="Center" Content="Select a Device"/>
         </ComboBox>
+        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="0,0,0,450" VerticalAlignment="Center" Width="120" Click="Button_Click"/>
 
     </Grid>
 </Window>
