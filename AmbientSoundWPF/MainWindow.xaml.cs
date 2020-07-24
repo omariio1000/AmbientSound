@@ -14,9 +14,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Management;
 
 //custom namespaces
+using NAudio.Wave;
+using NAudio.CoreAudioApi;
+using System.Management;
+using System.Numerics;
 
 
 namespace AmbientSoundWPF
@@ -30,29 +33,24 @@ namespace AmbientSoundWPF
 
 
         bool running = false;
-
+        int rate = 44100;                       //sample rate of sound card
+        int bufferSize = (int)Math.Pow(2, 11);  //must be multiple of 2
 
         public MainWindow()
         {
             InitializeComponent();
-
-            populateDevices();
+            DeviceSelect.SelectedItem = null;
+            DeviceSelect.Text = "Select a Device";
+            //populateDevices();
+            
+            WaveIn wi = new WaveIn();
+            wi.DeviceNumber = 0;
+            wi.WaveFormat = new NAudio.Wave.WaveFormat(rate, 1);
         }
 
         private void populateDevices()
         {
-            ManagementObjectSearcher objSearcher = new ManagementObjectSearcher(
-           "SELECT * FROM Win32_SoundDevice");
-
-            ManagementObjectCollection objCollection = objSearcher.Get();
-
-            foreach (ManagementObject obj in objCollection)
-            {
-                foreach (PropertyData property in obj.Properties)
-                {
-                    Console.Out.WriteLine(String.Format("{0}:{1}", property.Name, property.Value));
-                }
-            }
+            List<NAudio.Wave.WaveInCapabilities> sources = new List<NAudio.Wave.WaveInCapabilities>();
 
         }
 
