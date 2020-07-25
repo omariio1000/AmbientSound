@@ -50,7 +50,7 @@ namespace AmbientSoundWPF
             InitializeComponent();
             DeviceSelect.SelectedItem = null;
             DeviceSelect.Text = "Select a Device";
-            timer.Interval = TimeSpan.FromMilliseconds(50);
+            timer.Interval = TimeSpan.FromMilliseconds(5);
             timer.Tick += timer_Tick;
             populateDevices();
 
