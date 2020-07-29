@@ -387,7 +387,7 @@ namespace AmbientSoundWPF
             {
                 this.ShowInTaskbar = false;
                 ni.BalloonTipTitle = "Ambient Sound";
-                ni.BalloonTipText = "Ambient Sound";
+                ni.BalloonTipText = "Minimized to Tray";
                 ni.ShowBalloonTip(400);
                 ni.Visible = true;
                 Hide();

@@ -75,6 +75,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_255EB115AC3447D3AF862E30B1769EEE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3E7BBD934D23E825982960EE031C218B"
         "OwnerKey" = "8:_1C12C526200C9A0E57DF943422E49B3A"
         "MsmSig" = "8:_UNDEFINED"
@@ -107,12 +113,6 @@
         {
         "MsmKey" = "8:_3E7BBD934D23E825982960EE031C218B"
         "OwnerKey" = "8:_212656A05DC2B770D84E7D6D1DFD2E84"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5389E11FDCC34C1EB8DE7DCEBAA58710"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -488,6 +488,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_255EB115AC3447D3AF862E30B1769EEE"
+            {
+            "SourcePath" = "8:..\\AmbientSoundWPF\\IconShortcut.ico"
+            "TargetName" = "8:IconShortcut.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_54E455856FE440E09217F16929F7AC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3E7BBD934D23E825982960EE031C218B"
             {
             "AssemblyRegister" = "3:1"
@@ -517,26 +537,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5389E11FDCC34C1EB8DE7DCEBAA58710"
-            {
-            "SourcePath" = "8:..\\AmbientSoundWPF\\icon96.ico"
-            "TargetName" = "8:icon96.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_54E455856FE440E09217F16929F7AC0A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5E3ABA9B10C396C65277BA1F3AB0CDBC"
@@ -864,7 +864,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Ambient Sound"
         "ProductCode" = "8:{015950FB-4E51-41CB-A214-538E3BDADFE8}"
-        "PackageCode" = "8:{4AD24403-DC5A-4C9C-9B1D-E24F530FAFB9}"
+        "PackageCode" = "8:{66E91065-F2AE-4FF0-8194-79652FB7D994}"
         "UpgradeCode" = "8:{AA327C97-CC03-4E29-A176-0E4A89E551E2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -995,7 +995,7 @@
             "Target" = "8:_08EA1F3E9D5740CA86400C3BE561A7A8"
             "Folder" = "8:_E6ADEE153C8E4A18807EDC859B513768"
             "WorkingFolder" = "8:_54E455856FE440E09217F16929F7AC0A"
-            "Icon" = "8:_5389E11FDCC34C1EB8DE7DCEBAA58710"
+            "Icon" = "8:_255EB115AC3447D3AF862E30B1769EEE"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E913B78F3A72404896F7307C875346B5"
@@ -1009,7 +1009,7 @@
             "Target" = "8:_08EA1F3E9D5740CA86400C3BE561A7A8"
             "Folder" = "8:_DA31BD94B48A491E894A8FFA57C0E87D"
             "WorkingFolder" = "8:_54E455856FE440E09217F16929F7AC0A"
-            "Icon" = "8:_5389E11FDCC34C1EB8DE7DCEBAA58710"
+            "Icon" = "8:_255EB115AC3447D3AF862E30B1769EEE"
             "Feature" = "8:"
             }
         }
