@@ -344,7 +344,7 @@ namespace AmbientSoundWPF
             {
                 OnButton.Content = "OFF";
                 InLevel.Value = 0;
-                OutLevel.Value = 0;
+                OutLevel.Value = 0; 
                 OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
                 running = false;
                 string msg = "Could not record from audio device!\n\n";
