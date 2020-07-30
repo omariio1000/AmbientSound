@@ -315,6 +315,7 @@ namespace AmbientSoundWPF
 
                 if (inputLevel > 0)
                 {
+
                     double range = MaxSlider.Value - MinSlider.Value;
                     Console.Write("\nInput Level: " + inputLevel + "\n\n");
                     outputLevel = (int) (MinSlider.Value + ((range/100) * (double)(inputLevel)));
@@ -355,12 +356,9 @@ namespace AmbientSoundWPF
             }
             
         }
-        private void radioButtons_CheckedChanged(object sender, EventArgs e)
-        { 
+        
 
-        }
-
-            private void AmbientSound_Closed(object sender, EventArgs e)
+        private void AmbientSound_Closed(object sender, EventArgs e)
         {
             writer = null;
             running = false;
