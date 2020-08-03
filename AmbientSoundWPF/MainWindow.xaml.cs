@@ -365,6 +365,8 @@ namespace AmbientSoundWPF
                 timer.Stop();
             }
 
+
+            //next step: try putthing this in its own timer and changing the min volume after it turns off
             userLevel = (int)defaultPlaybackDevice.Volume; //record any system volume updates
             //MinSlider.Value = userLevel++; //refresh min value
         }
