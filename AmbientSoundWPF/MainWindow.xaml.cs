@@ -70,6 +70,7 @@ namespace AmbientSoundWPF
                     this.Show();
                     this.WindowState = WindowState.Normal;
                 };
+            ni.Visible = false;
 
             DeviceSelect.SelectedItem = null;
             DeviceSelect.Text = "Select a Device";
@@ -405,6 +406,8 @@ namespace AmbientSoundWPF
             running = false;
             var outputFolder = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NAudio");
             DeleteDirectory(outputFolder);
+            ni.Visible = false;
+            ni.Icon = null;
         }
 
         private void radioButtons_CheckedChanged(object sender, RoutedEventArgs e)
