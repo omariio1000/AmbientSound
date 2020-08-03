@@ -25,4 +25,3 @@ C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\bin\Debug\VisioForge
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\bin\Debug\VisioForge.Shared.dll
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\bin\Debug\VisioForge.Tools.dll
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\bin\Debug\VisioForge.Types.dll
-C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Debug\AmbientSoundWPF.csprojAssemblyReference.cache

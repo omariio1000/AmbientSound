@@ -52,6 +52,7 @@ namespace AmbientSoundWPF
         bool running = false;
         int inputLevel = 0;
         int outputLevel = 0;
+        int userLevel = 0; //preserved level, use to track system volume change
         int currentVolume = 0;
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer volumeChanger = new DispatcherTimer();
@@ -211,7 +212,7 @@ namespace AmbientSoundWPF
                 {
                     //Console.Write("\nOFF\n\n");
                     OnButton.Content = "OFF";
-                    OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
+                    OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)228, (byte)58, (byte)58));
                     InLevel.Value = 0;
                     OutLevel.Value = 0;
                     running = false;
@@ -225,7 +226,7 @@ namespace AmbientSoundWPF
             {
                 //Console.Write("\nDevices Refreshed\n\n");
                 OnButton.Content = "OFF";
-                OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
+                OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)228, (byte)58, (byte)58));
                 running = false;
                 InLevel.Value = 0;
                 OutLevel.Value = 0;
@@ -293,7 +294,7 @@ namespace AmbientSoundWPF
                 OnButton.Content = "OFF";
                 InLevel.Value = 0;
                 OutLevel.Value = 0;
-                OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
+                OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)228, (byte)58, (byte)58));
                 running = false;
                 string msg = "Maximum volume must be larger than minimum!\n\n";
                 System.Windows.MessageBox.Show(msg, "ERROR");
@@ -354,8 +355,8 @@ namespace AmbientSoundWPF
             {
                 OnButton.Content = "OFF";
                 InLevel.Value = 0;
-                OutLevel.Value = 0; 
-                OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
+                OutLevel.Value = 0;
+                OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)228, (byte)58, (byte)58));
                 running = false;
                 string msg = "Could not record from audio device!\n\n";
                 msg += "Is your microphone plugged in?\n";
@@ -363,7 +364,9 @@ namespace AmbientSoundWPF
                 System.Windows.MessageBox.Show(msg, "ERROR");
                 timer.Stop();
             }
-            
+
+            userLevel = (int)defaultPlaybackDevice.Volume; //record any system volume updates
+            //MinSlider.Value = userLevel++; //refresh min value
         }
 
         private void volume_Tick(object sender, EventArgs e)

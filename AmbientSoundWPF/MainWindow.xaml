@@ -12,7 +12,7 @@
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Center" Width="150" Height="49" Click="Button_Click" Background="Red" FontWeight="Bold"/>
+        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Center" Width="150" Height="49" Click="Button_Click" Background="#e43a3a" Foreground="#2e2e2e" FontWeight="Bold"/>
 
 
         <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,125,200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
@@ -21,10 +21,10 @@
         <TextBox Text="{Binding ElementName=MaxSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MaxText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="375,0,0,200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Slider Value="80"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MaxSlider" Width="100" Height="26" Margin="225,0,0,200" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,250,250" VerticalAlignment="Center" Height="28"/>
-        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="250,0,0,250" VerticalAlignment="Center" Height="28"/>
-        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,250,0" VerticalAlignment="Center" Height="26"/>
-        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="250,150,0,0" VerticalAlignment="Center" Height="26"/>
+        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,250,250" VerticalAlignment="Center" Height="28" FontWeight="Bold" Foreground="#383838"/>
+        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="250,0,0,250" VerticalAlignment="Center" Height="28" FontWeight="Bold" Foreground="#383838"/>
+        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,250,0" VerticalAlignment="Center" Height="26" FontWeight="Bold" Foreground="#545454"/>
+        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="250,150,0,0" VerticalAlignment="Center" Height="26" FontWeight="Bold" Foreground="#545454"/>
         <ProgressBar x:Name="InLevel" HorizontalAlignment="Center" Height="100" Margin="0,0,250,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
@@ -49,9 +49,9 @@
         <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="0,0,0,350" VerticalAlignment="Center" Width="120" >
             <Label Name ="DeviceLabel" HorizontalAlignment ="Center" VerticalAlignment="Center" Content="Select a Device"/>
         </ComboBox>
-        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="0,0,0,400" VerticalAlignment="Center" Width="120" Click="Button_Click" />
-        <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,400,75,0" Checked="radioButtons_CheckedChanged"/>
-        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75,400,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged"/>
+        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="0,0,0,400" VerticalAlignment="Center" Width="120" Click="Button_Click" Background="#828282" FontWeight="Bold" Foreground="#383838"/>
+        <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,400,75,0" Checked="radioButtons_CheckedChanged" FontWeight="DemiBold" Foreground="#383838"/>
+        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75,400,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged" FontWeight="DemiBold" Foreground="#383838"/>
 
     </Grid>
 </Window>
