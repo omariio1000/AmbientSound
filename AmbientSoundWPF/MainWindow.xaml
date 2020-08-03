@@ -5,27 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AmbientSoundWPF"
         mc:Ignorable="d"
-        Title="Ambient Sound" Height="500" Width="500"
+        Title="Ambient Sound"
     Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" Closed="AmbientSound_Closed" StateChanged="AmbientSound_StateChanged">
     <Grid Name="grid1" Margin="0" Background="#82898c" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="500">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Center" Width="150" Height="49" Click="Button_Click" Background="Red" FontWeight="Bold"/>
+        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Center" Width="150" Height="49" Click="Button_Click" Background="Red" FontWeight="Bold"/>
 
 
-        <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="188,112,267.811,362" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <Slider Value="20"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MinSlider" Width="100" Height="26" Margin="75,112,304.811,362" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,125,200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Slider Value="20"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MinSlider" Width="100" Height="26" Margin="0,0,275,200" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-        <TextBox Text="{Binding ElementName=MaxSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MaxText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="438,112,17.811,362" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Slider Value="80"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MaxSlider" Width="100" Height="26" Margin="325,112,54.811,362" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox Text="{Binding ElementName=MaxSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MaxText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="375,0,0,200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Slider Value="80"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MaxSlider" Width="100" Height="26" Margin="225,0,0,200" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="95,86,324.811,386" VerticalAlignment="Center" Height="28"/>
-        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="344,86,73.811,386" VerticalAlignment="Center" Height="28"/>
-        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="106,312,335.811,162" VerticalAlignment="Center" Height="26"/>
-        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="351,312,80.811,162" VerticalAlignment="Center" Height="26"/>
-        <ProgressBar x:Name="InLevel" HorizontalAlignment="Center" Height="100" Margin="75,200,304.811,200" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,250,250" VerticalAlignment="Center" Height="28"/>
+        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="250,0,0,250" VerticalAlignment="Center" Height="28"/>
+        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,250,0" VerticalAlignment="Center" Height="26"/>
+        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="250,150,0,0" VerticalAlignment="Center" Height="26"/>
+        <ProgressBar x:Name="InLevel" HorizontalAlignment="Center" Height="100" Margin="0,0,250,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -35,7 +35,7 @@
                 </TransformGroup>
             </ProgressBar.RenderTransform>
         </ProgressBar>
-        <ProgressBar x:Name="OutLevel" HorizontalAlignment="Center" Height="100" Margin="325,200,54.811,200" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5">
+        <ProgressBar x:Name="OutLevel" HorizontalAlignment="Center" Height="100" Margin="250,0,0,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -46,12 +46,12 @@
             </ProgressBar.RenderTransform>
         </ProgressBar>
 
-        <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="190,39,169.811,439" VerticalAlignment="Center" Width="120" >
+        <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="0,0,0,350" VerticalAlignment="Center" Width="120" >
             <Label Name ="DeviceLabel" HorizontalAlignment ="Center" VerticalAlignment="Center" Content="Select a Device"/>
         </ComboBox>
-        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="190,15,169.811,465" VerticalAlignment="Center" Width="120" Click="Button_Click" />
-        <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,350,75,0" Checked="radioButtons_CheckedChanged"/>
-        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75,350,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged"/>
+        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="0,0,0,400" VerticalAlignment="Center" Width="120" Click="Button_Click" />
+        <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,400,75,0" Checked="radioButtons_CheckedChanged"/>
+        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75,400,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged"/>
 
     </Grid>
 </Window>
