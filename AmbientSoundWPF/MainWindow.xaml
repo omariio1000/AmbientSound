@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Ambient Sound" Height="500" Width="500"
     Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" Closed="AmbientSound_Closed" StateChanged="AmbientSound_StateChanged">
-    <Grid Name="grid1" Margin="0" Background="#FFACACAC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="500">
+    <Grid Name="grid1" Margin="0" Background="#82898c" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="500">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition/>
@@ -46,10 +46,10 @@
             </ProgressBar.RenderTransform>
         </ProgressBar>
 
-        <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="190,39,169.811,439" VerticalAlignment="Center" Width="120">
+        <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="190,39,169.811,439" VerticalAlignment="Center" Width="120" >
             <Label Name ="DeviceLabel" HorizontalAlignment ="Center" VerticalAlignment="Center" Content="Select a Device"/>
         </ComboBox>
-        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="190,15,169.811,465" VerticalAlignment="Center" Width="120" Click="Button_Click"/>
+        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="190,15,169.811,465" VerticalAlignment="Center" Width="120" Click="Button_Click" />
         <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,350,75,0" Checked="radioButtons_CheckedChanged"/>
         <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="75,350,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged"/>
 

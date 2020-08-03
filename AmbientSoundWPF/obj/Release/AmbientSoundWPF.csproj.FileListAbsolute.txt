@@ -25,3 +25,4 @@ C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientS
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.csproj.CopyComplete
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.exe
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.pdb
+C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.csprojAssemblyReference.cache

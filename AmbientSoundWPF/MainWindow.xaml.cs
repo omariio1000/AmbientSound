@@ -52,9 +52,12 @@ namespace AmbientSoundWPF
         bool running = false;
         int inputLevel = 0;
         int outputLevel = 0;
+        int currentVolume = 0;
         DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer volumeChanger = new DispatcherTimer();
         int counter = 0;
-        
+        CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -70,16 +73,18 @@ namespace AmbientSoundWPF
 
             DeviceSelect.SelectedItem = null;
             DeviceSelect.Text = "Select a Device";
-            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
+            volumeChanger.Interval = TimeSpan.FromSeconds(timer.Interval.TotalSeconds / 100);
+            volumeChanger.Tick += volume_Tick;
             
             populateDevices();
             Directory.CreateDirectory(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NAudio"));
-            CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+            //CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
             //onsole.Out.Write("\nCurrent Volume:" + defaultPlaybackDevice.Volume + "\n\n");
 
             MinSlider.Value = (int) defaultPlaybackDevice.Volume;
-
+            currentVolume = (int) defaultPlaybackDevice.Volume;
             _playbackDevice = _deviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, (VisioForge.Shared.NAudio.CoreAudioApi.Role)ERole.eMultimedia);
             //Console.Out.Write("\nMin Volume:" + (int)MinSlider.Value+ "\n\n");
             //SetVolume((int) MinSlider.Value);
@@ -334,9 +339,12 @@ namespace AmbientSoundWPF
                         OutLevel.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
                     }
 
-                    
-                    SetVolume(outputLevel);
                     OutLevel.Value = outputLevel;
+
+                    //SetVolume(outputLevel);
+                    
+                    volumeChanger.Start();
+                    
                 }
 
                 //timer.Start();
@@ -356,7 +364,40 @@ namespace AmbientSoundWPF
             }
             
         }
-        
+
+        private void volume_Tick(object sender, EventArgs e)
+        {
+            if (currentVolume > outputLevel)
+            {
+                currentVolume = currentVolume - 1;
+                SetVolume(currentVolume);
+            }
+            else if (currentVolume < outputLevel)
+            {
+                currentVolume = currentVolume + 1;
+                SetVolume(currentVolume);
+            }
+            else
+            {
+                volumeChanger.Stop();
+            }
+
+            if (currentVolume < 50)
+            {
+                OutLevel.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)0, (byte)255, (byte)0));
+            }
+            else if (currentVolume < 80)
+            {
+                OutLevel.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)255, (byte)0));
+            }
+            else
+            {
+                OutLevel.Foreground = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)255, (byte)0, (byte)0));
+            }
+
+            OutLevel.Value = currentVolume;
+        }
+
 
         private void AmbientSound_Closed(object sender, EventArgs e)
         {
@@ -370,12 +411,14 @@ namespace AmbientSoundWPF
         {
             if (sender.Equals(IntFast))
             {
-                timer.Interval = TimeSpan.FromMilliseconds(50);
+                timer.Interval = TimeSpan.FromMilliseconds(100);
+                volumeChanger.Interval = TimeSpan.FromMilliseconds(timer.Interval.TotalMilliseconds / 100);
             }
 
             if (sender.Equals(IntRelaxed))
             {
-                timer.Interval = TimeSpan.FromSeconds(5);
+                timer.Interval = TimeSpan.FromSeconds(1);
+                volumeChanger.Interval = TimeSpan.FromSeconds(timer.Interval.TotalSeconds / 100);
             }
         }
 

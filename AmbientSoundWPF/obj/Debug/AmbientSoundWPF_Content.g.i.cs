@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("iconshortcut.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("splashscreen.png")]
 
 
