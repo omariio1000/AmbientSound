@@ -52,7 +52,7 @@ namespace AmbientSoundWPF
         bool running = false;
         int inputLevel = 0;
         int outputLevel = 0;
-        int userLevel = 0; //preserved level, use to track system volume change
+        //int userLevel = 0; //preserved level, use to track system volume change
         int currentVolume = 0;
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer volumeChanger = new DispatcherTimer();
@@ -367,7 +367,7 @@ namespace AmbientSoundWPF
 
 
             //next step: try putthing this in its own timer and changing the min volume after it turns off
-            userLevel = (int)defaultPlaybackDevice.Volume; //record any system volume updates
+            //userLevel = (int)defaultPlaybackDevice.Volume; //record any system volume updates
             //MinSlider.Value = userLevel++; //refresh min value
         }
 
