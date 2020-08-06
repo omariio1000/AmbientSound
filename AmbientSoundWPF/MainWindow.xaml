@@ -7,24 +7,25 @@
         mc:Ignorable="d"
         Title="Ambient Sound"
     Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" Closed="AmbientSound_Closed" StateChanged="AmbientSound_StateChanged">
-    <Grid Name="grid1" Margin="0" Background="#82898c" HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="500">
+    <Grid Name="grid1" Margin="0" Background="#312f3c" HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="500">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="200,300,0,0" VerticalAlignment="Center" Width="150" Height="50" Click="Button_Click" Background="#e43a3a" Foreground="#2e2e2e" FontWeight="Bold" BorderBrush="{x:Null}"/>
+        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="200,300,0,0" VerticalAlignment="Center" Width="150" Height="50" Click="Button_Click" Background="#e43a3a" Foreground="Black" FontWeight="Bold" BorderBrush="{x:Null}" FontFamily="Helvetica Compressed"/>
 
 
-        <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="75,0,0,200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" />
-        <Slider Value="20"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MinSlider" Width="100" Height="26" Margin="0,0,75,200" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" />
 
-        <TextBox Text="{Binding ElementName=MaxSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MaxText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="575,0,0,200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}"/>
-        <Slider Value="80"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MaxSlider" Width="100" Height="26" Margin="425,0,0,200" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100,0,0,175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#25232f" FontWeight="DemiBold" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Light" />
+        <Slider Value="20"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MinSlider" Width="100" Height="26" Margin="0,0,50,175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#25232f" Foreground="#635e78"  BorderBrush="#25232f" />
 
-        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,50,250" VerticalAlignment="Center" Height="28" FontWeight="Bold" Foreground="#383838"/>
-        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="450,0,0,250" VerticalAlignment="Center" Height="28" FontWeight="Bold" Foreground="#383838"/>
-        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,50,0" VerticalAlignment="Center" Height="26" FontWeight="Bold" Foreground="#545454"/>
-        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="450,150,0,0" VerticalAlignment="Center" Height="26" FontWeight="Bold" Foreground="#545454"/>
+        <TextBox Text="{Binding ElementName=MaxSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MaxText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="600,0,0,175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#25232f" FontWeight="DemiBold" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Light"/>
+        <Slider Value="80"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MaxSlider" Width="100" Height="26" Margin="450,0,0,175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#25232f" Foreground="#635e78"  BorderBrush="#25232f"/>
+
+        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,50,250" VerticalAlignment="Center" Height="28" Foreground="#bfbfbf" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="450,0,0,250" VerticalAlignment="Center" Height="28" FontWeight="DemiBold" Foreground="#bfbfbf" FontSize="14"/>
+        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,50,0" VerticalAlignment="Center" Height="26" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
+        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="450,150,0,0" VerticalAlignment="Center" Height="26" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
         <ProgressBar x:Name="InLevel" HorizontalAlignment="Center" Height="100" Margin="0,0,50,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
@@ -49,19 +50,78 @@
         <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="200,0,0,350" VerticalAlignment="Center" Width="120" BorderBrush="{x:Null}" >
             <Label Name ="DeviceLabel" HorizontalAlignment ="Center" VerticalAlignment="Center" Content="Select a Device"/>
         </ComboBox>
-        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="200,0,0,400" VerticalAlignment="Center" Width="120" Click="Button_Click" Background="#828282" FontWeight="Bold" Foreground="#383838" BorderBrush="{x:Null}"/>
-        <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="125,400,0,0" Checked="radioButtons_CheckedChanged" FontWeight="DemiBold" Foreground="#383838" BorderBrush="{x:Null}"/>
-        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="275,400,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged" FontWeight="DemiBold" Foreground="#383838" BorderBrush="{x:Null}"/>
+        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="200,0,0,415" VerticalAlignment="Center" Width="120" Click="Button_Click"  Foreground="#bfbfbf" BorderBrush="#FF25232F" FontFamily="Segoe UI Semibold" Height="25">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#25232f"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF333152"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="125,400,0,0" Checked="radioButtons_CheckedChanged" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Semilight"/>
+        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="275,400,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Semilight"/>
 
-        <StackPanel  HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="200" SnapsToDevicePixels="True" Background="#FF3A3A3A" Grid.ColumnSpan="2">
+        <StackPanel  HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="200" SnapsToDevicePixels="True" Background="#171523" Grid.ColumnSpan="2">
             <Grid>
                 <Image Height="50" Source="SplashScreen.png" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Content="Ambient Sound" VerticalAlignment="Bottom" FontSize="20" HorizontalAlignment="Right" Margin="0" FontFamily="Helvetica Compressed" Foreground="#FFE43A3A" FontWeight="Bold"/>
+                <Label Content="Ambient Sound" VerticalAlignment="Bottom" FontSize="20" Margin="0,0,5,0" Foreground="#FFF4364A" FontWeight="Bold" FontFamily="Nirmala UI Semilight" HorizontalAlignment="Right"/>
             </Grid>
-            
-            <Button Content="MAIN" Height="50" Foreground="Black" Background="#FFF4364A" BorderBrush="{x:Null}"/>
-            <Button Content="HELP" Height="50" Foreground="Black" BorderBrush="{x:Null}"/>
-            
+
+            <Button Name="MainButton" Content="MAIN" Height="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="#FFF4364A" Margin="0,5,0,0" FontWeight="Bold">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#FFF4364A"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFE47C87"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Name="HelpButton" Content="HELP" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="50" HorizontalContentAlignment="Left" BorderBrush="#FFF4364A" Foreground="White" Margin="0,5,0,0" FontWeight="Bold">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#FF0B0A1D"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF333152"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
 
         </StackPanel>
     </Grid>
