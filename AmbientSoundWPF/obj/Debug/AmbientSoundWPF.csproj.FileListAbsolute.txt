@@ -28,3 +28,4 @@ C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\bin\Debug\VisioForge
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Debug\Views\HelpView.g.cs
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Debug\Views\HelpView.baml
+C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Debug\AmbientSoundWPF.csprojAssemblyReference.cache

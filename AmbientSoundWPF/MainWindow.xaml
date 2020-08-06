@@ -22,7 +22,28 @@
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="200,300,0,0" VerticalAlignment="Center" Width="150" Height="50" Click="Button_Click" Background="#e43a3a" Foreground="Black" FontWeight="Bold" BorderBrush="{x:Null}" FontFamily="Helvetica Compressed"/>
+
+        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="200,300,0,0" VerticalAlignment="Center" Width="150" Height="50" Click="Button_Click" Background="#e43a3a" Foreground="Black" FontWeight="Bold" BorderBrush="{x:Null}" FontFamily="Helvetica Compressed" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
 
 
@@ -60,10 +81,10 @@
         <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="200,0,0,350" VerticalAlignment="Center" Width="120" BorderBrush="{x:Null}" >
             <Label Name ="DeviceLabel" HorizontalAlignment ="Center" VerticalAlignment="Center" Content="Select a Device"/>
         </ComboBox>
-        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="200,0,0,415" VerticalAlignment="Center" Width="120" Click="Button_Click"  Foreground="#bfbfbf" BorderBrush="#FF25232F" FontFamily="Segoe UI Semibold" Height="25">
+        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="200,0,0,415" VerticalAlignment="Center" Width="120" Click="Button_Click"  Background ="#25232f" Foreground="#bfbfbf" BorderBrush="#FF25232F" FontFamily="Segoe UI Semibold" Height="25" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#25232f"/>
+
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
@@ -75,7 +96,7 @@
                     </Setter>
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FF333152"/>
+
                         </Trigger>
                     </Style.Triggers>
                 </Style>
@@ -90,10 +111,10 @@
                 <Label Content="Ambient Sound" VerticalAlignment="Bottom" FontSize="20" Margin="0,0,5,0" Foreground="#FFF4364A" FontWeight="Bold" FontFamily="Nirmala UI Semilight" HorizontalAlignment="Right"/>
             </Grid>
 
-            <Button Name="MainButton" Content="MAIN" Height="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="#FFF4364A" Margin="0,5,0,0" FontWeight="Bold" Click="Button_Click">
+            <Button Name="MainButton" Content="MAIN" Height="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Background ="#FFF4364A" BorderBrush="{x:Null}" Margin="0,5,0,0" FontWeight="Bold" Click="Button_Click" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="#FFF4364A"/>
+
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type Button}">
@@ -105,16 +126,16 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FFE47C87"/>
+
                             </Trigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Name="HelpButton" Content="HELP" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="50" HorizontalContentAlignment="Left" BorderBrush="#FFF4364A" Foreground="White" Margin="0,5,0,0" FontWeight="Bold" Click="Button_Click">
+            <Button Name="HelpButton" Content="HELP" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Background ="#FF0B0A1D" BorderBrush="{x:Null}" Foreground="White" Margin="0,5,0,0" FontWeight="Bold" Click="Button_Click" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="#FF0B0A1D"/>
+
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type Button}">
@@ -126,7 +147,7 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FF333152"/>
+
                             </Trigger>
                         </Style.Triggers>
                     </Style>

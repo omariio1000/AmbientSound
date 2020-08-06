@@ -49,8 +49,9 @@ namespace AmbientSoundWPF
         private readonly VisioForge.Shared.NAudio.CoreAudioApi.MMDeviceEnumerator _deviceEnumerator = new VisioForge.Shared.NAudio.CoreAudioApi.MMDeviceEnumerator();
         private readonly VisioForge.Shared.NAudio.CoreAudioApi.MMDevice _playbackDevice;
          
-
-        bool running = false;
+        public enum winState {MAIN, HELP};
+        public winState openWindow = winState.MAIN;
+        public bool running = false;
         int inputLevel = 0;
         int outputLevel = 0;
         //int userLevel = 0; //preserved level, use to track system volume change
@@ -86,8 +87,8 @@ namespace AmbientSoundWPF
             //CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
             //onsole.Out.Write("\nCurrent Volume:" + defaultPlaybackDevice.Volume + "\n\n");
 
-            MinSlider.Value = (int) defaultPlaybackDevice.Volume;
-            currentVolume = (int) defaultPlaybackDevice.Volume;
+            MinSlider.Value = (int) defaultPlaybackDevice.Volume + 1;
+            currentVolume = (int) defaultPlaybackDevice.Volume + 1;
             _playbackDevice = _deviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, (VisioForge.Shared.NAudio.CoreAudioApi.Role)ERole.eMultimedia);
             //Console.Out.Write("\nMin Volume:" + (int)MinSlider.Value+ "\n\n");
             //SetVolume((int) MinSlider.Value);
@@ -189,6 +190,7 @@ namespace AmbientSoundWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var converter = new System.Windows.Media.BrushConverter();
             if (sender.Equals(OnButton)) {
                 var outputFolder = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NAudio");
                 var outputFilePath = System.IO.Path.Combine(outputFolder, "recorded" + counter + ".wav");
@@ -196,7 +198,7 @@ namespace AmbientSoundWPF
                 {
                     //Console.Write("\nON\n\n");
                     OnButton.Content = "ON";
-                    OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)0, (byte)255, (byte)0));
+                    OnButton.Background = new SolidColorBrush(System.Windows.Media.Color.FromArgb(255, (byte)78, (byte)198, (byte)98));
                     running = true;
                     initializeDevices();
                     counter++;
@@ -239,11 +241,17 @@ namespace AmbientSoundWPF
             else if (sender.Equals(MainButton))
             {
                 DataContext = null;
+                openWindow = winState.MAIN;
+                MainButton.Background = (System.Windows.Media.Brush) converter.ConvertFromString("#FFF4364A");
+                HelpButton.Background = (System.Windows.Media.Brush) converter.ConvertFromString("#FF0B0A1D");
             }
 
             else if (sender.Equals(HelpButton))
             {
                 DataContext = new HelpViewModel();
+                openWindow = winState.HELP;
+                HelpButton.Background = (System.Windows.Media.Brush)converter.ConvertFromString("#FFF4364A");
+                MainButton.Background = (System.Windows.Media.Brush)converter.ConvertFromString("#FF0B0A1D");
             }
         }
 
@@ -457,6 +465,16 @@ namespace AmbientSoundWPF
                 ni.Visible = false;
                 this.ShowInTaskbar = true;
             }
+        }
+
+        private void Button_Enter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            ButtonHover.Button_Hover(this, sender, e, openWindow, true, running);
+        }
+
+        private void Button_Exit(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            ButtonHover.Button_Hover(this, sender, e, openWindow, false, running);
         }
     }
 }
