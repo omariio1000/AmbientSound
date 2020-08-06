@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("splashscreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("help%20interface.png")]
 
 

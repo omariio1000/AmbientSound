@@ -220,12 +220,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5E3ABA9B10C396C65277BA1F3AB0CDBC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_08EA1F3E9D5740CA86400C3BE561A7A8"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -301,6 +295,12 @@
         "OwnerKey" = "8:_F23DE5F29A5D5A68CC08AFAE919D0AB9"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5E3ABA9B10C396C65277BA1F3AB0CDBC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -319,6 +319,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -335,6 +351,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -864,7 +888,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Ambient Sound"
         "ProductCode" = "8:{015950FB-4E51-41CB-A214-538E3BDADFE8}"
-        "PackageCode" = "8:{66E91065-F2AE-4FF0-8194-79652FB7D994}"
+        "PackageCode" = "8:{8AB2EC5A-0E23-4B31-BC38-6007ED0D7D63}"
         "UpgradeCode" = "8:{AA327C97-CC03-4E29-A176-0E4A89E551E2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -984,6 +1008,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AAC3CCF624204F8F90E216C0C6CE4C71"
+            {
+            "Name" = "8:Ambient Sound"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_08EA1F3E9D5740CA86400C3BE561A7A8"
+            "Folder" = "8:_54E455856FE440E09217F16929F7AC0A"
+            "WorkingFolder" = "8:_54E455856FE440E09217F16929F7AC0A"
+            "Icon" = "8:_255EB115AC3447D3AF862E30B1769EEE"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B835E04DB29F470AB098CD5D65024D45"
             {
             "Name" = "8:Ambient Sound"
@@ -1413,7 +1451,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_08EA1F3E9D5740CA86400C3BE561A7A8"
             {
-            "SourcePath" = "8:..\\AmbientSoundWPF\\obj\\Release\\AmbientSoundWPF.exe"
+            "SourcePath" = "8:..\\AmbientSoundWPF\\obj\\Debug\\AmbientSoundWPF.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_54E455856FE440E09217F16929F7AC0A"

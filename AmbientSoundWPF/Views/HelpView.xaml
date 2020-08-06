@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
     <Grid Background="#312f3c">
-
+        <Image Source ="/Help Interface.png" HorizontalAlignment="Left" Height="500" Margin="0" VerticalAlignment="Top" Width="500" />
+        
     </Grid>
 </UserControl>
