@@ -4,9 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AmbientSoundWPF"
+        xmlns:ViewModels="clr-namespace:AmbientSoundWPF.ViewModels"
+        xmlns:Views="clr-namespace:AmbientSoundWPF.Views"
+        
         mc:Ignorable="d"
         Title="Ambient Sound"
     Name="AmbientSound" Icon="AmbientSound.ico" Foreground="White" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" Closed="AmbientSound_Closed" StateChanged="AmbientSound_StateChanged">
+
+    <Window.Resources>
+        <DataTemplate x:Name="HelpViewTemplate" DataType="{x:Type ViewModels:HelpViewModel}">
+            <Views:HelpView DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid Name="grid1" Margin="0" Background="#312f3c" HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="500">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
@@ -80,7 +90,7 @@
                 <Label Content="Ambient Sound" VerticalAlignment="Bottom" FontSize="20" Margin="0,0,5,0" Foreground="#FFF4364A" FontWeight="Bold" FontFamily="Nirmala UI Semilight" HorizontalAlignment="Right"/>
             </Grid>
 
-            <Button Name="MainButton" Content="MAIN" Height="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="#FFF4364A" Margin="0,5,0,0" FontWeight="Bold">
+            <Button Name="MainButton" Content="MAIN" Height="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="#FFF4364A" Margin="0,5,0,0" FontWeight="Bold" Click="Button_Click">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="#FFF4364A"/>
@@ -101,7 +111,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Name="HelpButton" Content="HELP" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="50" HorizontalContentAlignment="Left" BorderBrush="#FFF4364A" Foreground="White" Margin="0,5,0,0" FontWeight="Bold">
+            <Button Name="HelpButton" Content="HELP" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="50" HorizontalContentAlignment="Left" BorderBrush="#FFF4364A" Foreground="White" Margin="0,5,0,0" FontWeight="Bold" Click="Button_Click">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="#FF0B0A1D"/>
@@ -124,5 +134,16 @@
             </Button>
 
         </StackPanel>
+
+        <ContentControl Grid.Row="0" Grid.ColumnSpan="2" Content="{Binding}" Margin="200,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <ContentControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ContentControl.RenderTransform>
+        </ContentControl>
     </Grid>
 </Window>

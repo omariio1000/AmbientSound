@@ -32,6 +32,7 @@ using SharpDX.DXGI;
 using VisioForge.Shared.WindowsMediaLib;
 using System.Drawing;
 using System.Windows.Forms;
+using AmbientSoundWPF.ViewModels;
 
 namespace AmbientSoundWPF
 {
@@ -233,6 +234,16 @@ namespace AmbientSoundWPF
                 timer.Stop();
                 populateDevices();
                 
+            }
+
+            else if (sender.Equals(MainButton))
+            {
+                DataContext = null;
+            }
+
+            else if (sender.Equals(HelpButton))
+            {
+                DataContext = new HelpViewModel();
             }
         }
 

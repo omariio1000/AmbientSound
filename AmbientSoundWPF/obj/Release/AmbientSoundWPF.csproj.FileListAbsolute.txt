@@ -25,3 +25,7 @@ C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientS
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.csproj.CopyComplete
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.exe
 C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.pdb
+C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\AmbientSoundWPF.csprojAssemblyReference.cache
+C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\Views\HelpView.g.cs
+C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\omari\source\repos\AmbientSoundWPF\AmbientSoundWPF\obj\Release\Views\HelpView.baml
