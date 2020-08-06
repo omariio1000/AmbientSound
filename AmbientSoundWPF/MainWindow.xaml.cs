@@ -87,8 +87,8 @@ namespace AmbientSoundWPF
             //CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
             //onsole.Out.Write("\nCurrent Volume:" + defaultPlaybackDevice.Volume + "\n\n");
 
-            MinSlider.Value = (int) defaultPlaybackDevice.Volume + 1;
-            currentVolume = (int) defaultPlaybackDevice.Volume + 1;
+            MinSlider.Value = (int) defaultPlaybackDevice.Volume;
+            currentVolume = (int) defaultPlaybackDevice.Volume;
             _playbackDevice = _deviceEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, (VisioForge.Shared.NAudio.CoreAudioApi.Role)ERole.eMultimedia);
             //Console.Out.Write("\nMin Volume:" + (int)MinSlider.Value+ "\n\n");
             //SetVolume((int) MinSlider.Value);
