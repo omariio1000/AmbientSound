@@ -24,8 +24,8 @@
 
         <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,50,250" VerticalAlignment="Center" Height="28" Foreground="#bfbfbf" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="450,0,0,250" VerticalAlignment="Center" Height="28" FontWeight="DemiBold" Foreground="#bfbfbf" FontSize="14"/>
-        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,50,0" VerticalAlignment="Center" Height="26" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
-        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="450,150,0,0" VerticalAlignment="Center" Height="26" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
+        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,50,0" VerticalAlignment="Center" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
+        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="450,150,0,0" VerticalAlignment="Center" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
         <ProgressBar x:Name="InLevel" HorizontalAlignment="Center" Height="100" Margin="0,0,50,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
