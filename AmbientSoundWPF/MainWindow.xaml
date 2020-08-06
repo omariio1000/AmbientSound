@@ -17,13 +17,13 @@
         </DataTemplate>
     </Window.Resources>
 
-    <Grid Name="grid1" Margin="0" Background="#312f3c" HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="500">
+    <Grid Name="grid1" Margin="0" Background="#312f3c" HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Height="500">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="200,300,0,0" VerticalAlignment="Center" Width="150" Height="50" Click="Button_Click" Background="#e43a3a" Foreground="Black" FontWeight="Bold" BorderBrush="{x:Null}" FontFamily="Helvetica Compressed" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
+        <Button x:Name="OnButton" Content="OFF" HorizontalAlignment="Center" Margin="225,300,0,0" VerticalAlignment="Center" Width="150" Height="50" Click="Button_Click" Background="#e43a3a" Foreground="Black" FontWeight="Bold" BorderBrush="{x:Null}" FontFamily="Helvetica Compressed" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     
@@ -47,17 +47,17 @@
 
 
 
-        <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100,0,0,175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#25232f" FontWeight="DemiBold" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Light" />
-        <Slider Value="20"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MinSlider" Width="100" Height="26" Margin="0,0,50,175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#25232f" Foreground="#635e78"  BorderBrush="#25232f" />
+        <TextBox Text="{ Binding ElementName=MinSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MinText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="125,0,0,175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#25232f" FontWeight="DemiBold" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Light" />
+        <Slider Value="20"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MinSlider" Width="100" Height="26" Margin="0,0,25,175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#25232f" Foreground="#635e78"  BorderBrush="#25232f" />
 
-        <TextBox Text="{Binding ElementName=MaxSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MaxText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="600,0,0,175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#25232f" FontWeight="DemiBold" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Light"/>
-        <Slider Value="80"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MaxSlider" Width="100" Height="26" Margin="450,0,0,175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#25232f" Foreground="#635e78"  BorderBrush="#25232f"/>
+        <TextBox Text="{Binding ElementName=MaxSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Name="MaxText" TextAlignment="Center" Width="24" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="625,0,0,175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#25232f" FontWeight="DemiBold" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Light"/>
+        <Slider Value="80"  Maximum ="100" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="MaxSlider" Width="100" Height="26" Margin="475,0,0,175" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#25232f" Foreground="#635e78"  BorderBrush="#25232f"/>
 
-        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,50,250" VerticalAlignment="Center" Height="28" Foreground="#bfbfbf" FontSize="14" FontWeight="Bold"/>
-        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="450,0,0,250" VerticalAlignment="Center" Height="28" FontWeight="DemiBold" Foreground="#bfbfbf" FontSize="14"/>
-        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,50,0" VerticalAlignment="Center" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
-        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="450,150,0,0" VerticalAlignment="Center" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
-        <ProgressBar x:Name="InLevel" HorizontalAlignment="Center" Height="100" Margin="0,0,50,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <Label x:Name="MinLabel" Content="Minimum" HorizontalAlignment="Center" Margin="0,0,0,250" VerticalAlignment="Center" Height="28" Foreground="#bfbfbf" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="MaxLabel" Content="Maximum" HorizontalAlignment="Center" Margin="475,0,0,250" VerticalAlignment="Center" Height="28" FontWeight="DemiBold" Foreground="#bfbfbf" FontSize="14"/>
+        <Label x:Name="InLabel" Content="Input" HorizontalAlignment="Center" Margin="0,150,25,0" VerticalAlignment="Center" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
+        <Label x:Name="OutLabel" Content="Output" HorizontalAlignment="Center" Margin="475,150,0,0" VerticalAlignment="Center" FontWeight="DemiBold" Foreground="#bfbfbf" FontFamily="Segoe UI Semibold" FontSize="14"/>
+        <ProgressBar x:Name="InLevel" HorizontalAlignment="Center" Height="100" Margin="0,0,25,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -67,7 +67,7 @@
                 </TransformGroup>
             </ProgressBar.RenderTransform>
         </ProgressBar>
-        <ProgressBar x:Name="OutLevel" HorizontalAlignment="Center" Height="100" Margin="450,0,0,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <ProgressBar x:Name="OutLevel" HorizontalAlignment="Center" Height="100" Margin="475,0,0,0" VerticalAlignment="Center" Width="100" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -78,10 +78,10 @@
             </ProgressBar.RenderTransform>
         </ProgressBar>
 
-        <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="200,0,0,350" VerticalAlignment="Center" Width="120" BorderBrush="{x:Null}" >
+        <ComboBox Name ="DeviceSelect" HorizontalAlignment="Center" Margin="225,0,0,350" VerticalAlignment="Center" Width="120" BorderBrush="{x:Null}" >
             <Label Name ="DeviceLabel" HorizontalAlignment ="Center" VerticalAlignment="Center" Content="Select a Device"/>
         </ComboBox>
-        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="200,0,0,415" VerticalAlignment="Center" Width="120" Click="Button_Click"  Background ="#25232f" Foreground="#bfbfbf" BorderBrush="#FF25232F" FontFamily="Segoe UI Semibold" Height="25" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
+        <Button Name="DeviceRefresh" Content="Refresh Devices" HorizontalAlignment="Center" Margin="225,0,0,415" VerticalAlignment="Center" Width="120" Click="Button_Click"  Background ="#25232f" Foreground="#bfbfbf" BorderBrush="#FF25232F" FontFamily="Segoe UI Semibold" Height="25" MouseEnter="Button_Enter" MouseLeave="Button_Exit">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
 
@@ -103,7 +103,7 @@
             </Button.Style>
         </Button>
         <RadioButton Name="IntFast" GroupName ="Interval" Content="Fast" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="125,400,0,0" Checked="radioButtons_CheckedChanged" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Semilight"/>
-        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="275,400,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Semilight"/>
+        <RadioButton Name="IntRelaxed" GroupName ="Interval" Content="Relaxed" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,400,0,0" IsChecked="True" Checked="radioButtons_CheckedChanged" Foreground="#bfbfbf" BorderBrush="{x:Null}" FontFamily="Segoe UI Semilight"/>
 
         <StackPanel  HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="200" SnapsToDevicePixels="True" Background="#171523" Grid.ColumnSpan="2">
             <Grid>
